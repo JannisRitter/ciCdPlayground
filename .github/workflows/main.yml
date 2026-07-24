@@ -30,7 +30,8 @@ jobs:
       uses: EnricoMi/publish-unit-test-result-action@v2
       if: (!cancelled())
       with:
-       files: |
+        check_name: "Unit Tests"
+        files: |
         **/reports/**/jest-junit.xml
     - name: Build
       run: yarn build
@@ -40,5 +41,5 @@ jobs:
       uses: EnricoMi/publish-unit-test-result-action@v2
       if: (!cancelled())
       with:
-       files: |
+        files: |
         **/reports/**/cypress-junit.xml

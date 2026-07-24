@@ -26,6 +26,12 @@ jobs:
       run: yarn
     - name: Unit tests
       run: yarn test
+    - name: Publish Test results
+      uses: EnricoMi/publish-unit-test-result-action@v2
+      if: (!cancelled())
+      with:
+       files: |
+        **/results/**/*.xml
     - name: Build
       run: yarn build
     - name: Integration tests

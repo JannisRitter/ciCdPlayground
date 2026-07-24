@@ -31,7 +31,7 @@ jobs:
       if: (!cancelled())
       with:
        files: |
-        **/reports/**/*.xml
+        **/reports/**/jest-junit.xml
     - name: Build
       run: yarn build
     - name: Integration tests
@@ -41,4 +41,4 @@ jobs:
       if: (!cancelled())
       with:
        files: |
-        **/reports/**/*.xml
+        **/reports/**/cypress-junit.xml

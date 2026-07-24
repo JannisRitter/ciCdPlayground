@@ -1,5 +1,6 @@
 pipeline {
     agent any
+    junit stdioRetention: 'ALL', testResults: '**/reports/*.xml'
     tools {
         nodejs 'yarn'
     }
@@ -12,7 +13,6 @@ pipeline {
         }
 
         stage('UnitTest') {
-            junit stdioRetention: 'ALL', testResults: '**/reports/*.xml'
             steps {
                 sh 'yarn test'
             }

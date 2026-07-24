@@ -1,6 +1,5 @@
 pipeline {
     agent any
-    junit stdioRetention: 'ALL', testResults: '**/reports/*.xml'
     tools {
         nodejs 'yarn'
     }
